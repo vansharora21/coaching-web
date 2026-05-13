@@ -1,3 +1,38 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .glass-panel {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .card-shadow {
+    box-shadow: 0 10px 40px rgba(26, 43, 72, 0.04);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, #031632 0%, #38BDF8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .academic-particle {
+    position: absolute;
+    opacity: 0.1;
+    pointer-events: none;
+  }
+}
+
+body {
+  @apply bg-background text-on-background font-body-md;
+}
