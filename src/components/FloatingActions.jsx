@@ -18,13 +18,13 @@ const FloatingActions = () => {
     {
       id: 'call',
       icon: 'call',
-      link: 'tel:+15551234567',
+      link: 'tel:+919950803030',
       label: 'Call'
     },
     {
       id: 'whatsapp',
       icon: 'forum',
-      link: 'https://wa.me/15551234567',
+      link: 'https://wa.me/919950803030',
       label: 'WhatsApp',
       external: true
     }

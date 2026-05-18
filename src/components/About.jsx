@@ -1,10 +1,11 @@
 import { motion } from 'framer-motion';
+import classroomCard from './images/4.jpeg';
 
 const About = () => {
   const points = [
-    'Small batches with individual attention',
-    'Weekly assessments with correction classes',
-    'Parent updates that explain progress clearly'
+    'High-quality education for students from Classes 1 to 10',
+    'Strong conceptual understanding beyond syllabus completion',
+    'Structured learning methods with a supportive environment'
   ];
 
   return (
@@ -18,14 +19,14 @@ const About = () => {
         >
           <div className="rounded-2xl overflow-hidden card-shadow relative group border border-white">
             <img
-              alt="Teacher guiding students during a focused study session"
+              alt="Lakshya students during a classroom test"
               className="w-full object-cover aspect-[4/3] group-hover:scale-105 transition-transform duration-700"
-              src="https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=900&auto=format&fit=crop"
+              src={classroomCard}
             />
           </div>
           <div className="absolute -bottom-8 right-4 md:right-10 bg-white rounded-xl card-shadow border border-outline-variant/30 p-5 max-w-xs">
             <div className="text-label-caps text-secondary uppercase mb-2">Learning Method</div>
-            <div className="text-primary font-bold text-xl">Teach. Test. Correct. Repeat.</div>
+            <div className="text-primary font-bold text-xl">Padhai. Practice. Progress.</div>
           </div>
         </motion.div>
 
@@ -35,10 +36,16 @@ const About = () => {
           viewport={{ once: true }}
           className="space-y-6 pt-8 lg:pt-0"
         >
-          <h2 className="text-label-caps text-on-primary-container uppercase font-bold tracking-widest">Why Academy Elite?</h2>
-          <h3 className="text-headline-md md:text-display-lg-mobile font-display-lg text-primary leading-tight">A coaching system built around how students actually improve.</h3>
+          <h2 className="text-label-caps text-on-primary-container uppercase font-bold tracking-widest">About Lakshya Coaching Classes</h2>
+          <h3 className="text-headline-md md:text-display-lg-mobile font-display-lg text-primary leading-tight">Focused learning for Classes 1 to 10.</h3>
           <p className="text-body-lg text-on-surface-variant leading-relaxed">
-            Students do not need more pressure. They need structure, clear explanations, timely practice, and mentors who notice when a topic has not landed yet.
+            Lakshya Coaching Classes is dedicated to providing high-quality education for students from Classes 1 to 10.
+          </p>
+          <p className="text-body-lg text-on-surface-variant leading-relaxed">
+            Our focus is not just on completing the syllabus, but on building strong conceptual understanding that helps students excel academically and develop confidence.
+          </p>
+          <p className="text-body-lg text-on-surface-variant leading-relaxed">
+            With experienced teachers, structured learning methods, and a supportive environment, we ensure that every student gets the attention they deserve.
           </p>
           <ul className="space-y-4 pt-2">
             {points.map((item, i) => (

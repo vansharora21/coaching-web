@@ -1,37 +1,36 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 
 const EliteEdge = () => {
   const pillars = [
     {
       label: '01',
-      title: 'Concept First Teaching',
-      text: 'Every chapter starts with the why, not shortcuts. Students build the base before moving into speed and exam patterns.',
+      title: 'Strong Focus on Basics & Concepts',
+      text: 'Every chapter starts with fundamentals so students understand the topic before moving to exercises and exams.',
       icon: 'auto_stories'
     },
     {
       label: '02',
-      title: 'Practice With Feedback',
-      text: 'Classwork, worksheets, and doubt correction happen in one loop so mistakes are fixed while the topic is still fresh.',
+      title: 'Experienced and Caring Teachers',
+      text: 'Students learn in a supportive environment where teachers explain patiently and track individual needs.',
       icon: 'edit_note'
     },
     {
       label: '03',
-      title: 'Weekly Score Review',
-      text: 'Short assessments track accuracy, presentation, speed, and weak topics. Parents get updates that are easy to act on.',
+      title: 'Regular Tests & Performance Tracking',
+      text: 'Tests, revision, and correction help parents and students understand progress clearly.',
       icon: 'analytics'
     }
   ];
 
   const outcomes = [
-    ['Small batches', 'Focused teacher attention'],
-    ['Chapter tests', 'Every week, not just before exams'],
-    ['Parent updates', 'Clear progress and next steps'],
-    ['Exam discipline', 'Revision plans and answer practice']
+    ['Personal attention', 'Every child gets focused support'],
+    ['All subjects', 'Covered under one roof'],
+    ['Positive environment', 'Calm, disciplined, and encouraging'],
+    ['Concept learning', 'Clarity before speed']
   ];
 
   return (
-    <section className="py-section-gap bg-primary text-on-primary overflow-hidden">
+    <section className="py-section-gap bg-primary text-on-primary overflow-hidden" id="why-us">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <div className="grid grid-cols-1 lg:grid-cols-[0.88fr_1.12fr] gap-12 lg:gap-16 items-start">
           <motion.div
@@ -42,17 +41,14 @@ const EliteEdge = () => {
           >
             <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/15 text-primary-fixed text-label-caps uppercase font-bold">
               <span className="material-symbols-outlined text-[17px]">school</span>
-              The Elite Ecosystem
+              Why Choose Us
             </div>
             <h3 className="text-headline-md md:text-display-lg-mobile font-display-lg">
-              A serious study system, not just extra classes.
+              Why Parents Trust Us
             </h3>
             <p className="text-body-lg text-primary-fixed-dim max-w-xl">
-              The section that matters most is the daily learning loop: clear teaching, guided practice, honest testing, and correction before the next chapter begins.
+              Lakshya combines strong basics, caring faculty, regular testing, and a disciplined classroom environment for dependable school progress.
             </p>
-            <Link to="/inquire" className="inline-flex items-center gap-2 bg-white text-primary px-6 py-3 rounded-full font-bold hover:bg-primary-fixed transition-colors">
-              Inquire now <span className="material-symbols-outlined text-[18px]">east</span>
-            </Link>
           </motion.div>
 
           <div className="space-y-6">

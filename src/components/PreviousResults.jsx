@@ -1,11 +1,12 @@
 import { motion } from 'framer-motion';
+import lakshyaLogo from './images/3.jpeg';
 
 const PreviousResults = () => {
   const toppers = [
-    { name: 'Rahul S.', score: '98.5%', board: 'CBSE Class 10', year: '2024', img: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=240&auto=format&fit=crop' },
-    { name: 'Priya M.', score: '97.2%', board: 'ICSE Class 10', year: '2024', img: 'https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?q=80&w=240&auto=format&fit=crop' },
-    { name: 'Ishan K.', score: '96.8%', board: 'CBSE Class 10', year: '2024', img: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=240&auto=format&fit=crop' },
-    { name: 'Ananya V.', score: '99.0%', board: 'Olympiad Gold', year: '2023', img: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=240&auto=format&fit=crop' }
+    { name: 'Class X Batch', score: 'Board', board: 'Maths & Science', year: 'Regular tests' },
+    { name: 'Class IX Batch', score: 'Core', board: 'Social Science', year: 'Answer writing' },
+    { name: 'Class VI-VIII', score: 'Base', board: 'All subjects', year: 'Weekly practice' },
+    { name: 'Class I-V', score: 'Junior', board: 'Foundation classes', year: 'Homework support' }
   ];
 
   return (
@@ -32,7 +33,7 @@ const PreviousResults = () => {
             >
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-16 h-16 rounded-xl overflow-hidden border border-primary-fixed group-hover:border-primary transition-colors">
-                  <img src={topper.img} alt={topper.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                  <img src={lakshyaLogo} alt="" className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-500" />
                 </div>
                 <div>
                   <h4 className="font-bold text-lg text-primary">{topper.name}</h4>

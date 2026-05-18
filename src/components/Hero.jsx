@@ -1,10 +1,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import logo from './images/3.jpeg';
+import classroom from './images/4.jpeg';
 
 const Hero = () => {
   return (
     <header className="relative pt-28 pb-16 md:pt-36 md:pb-24 overflow-hidden bg-surface-bright">
-      <div className="absolute inset-0 pointer-events-none bg-[radial-gradient(circle_at_18%_18%,rgba(211,229,241,0.9),transparent_28%),radial-gradient(circle_at_84%_12%,rgba(255,222,173,0.65),transparent_22%)]"></div>
+      <div className="absolute inset-0 pointer-events-none bg-[linear-gradient(135deg,rgba(255,245,224,0.95),rgba(255,255,255,0.72)_44%,rgba(211,229,241,0.82))]"></div>
 
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop grid grid-cols-1 lg:grid-cols-[1.02fr_0.98fr] items-center gap-12 md:gap-16 relative z-10">
         <motion.div
@@ -14,13 +16,13 @@ const Hero = () => {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-white text-on-secondary-container rounded-full text-label-caps uppercase font-bold shadow-sm border border-outline-variant/30">
             <span className="material-symbols-outlined text-[16px]" style={{ fontVariationSettings: "'FILL' 1" }}>verified</span>
-            Admissions open for Classes 1-10
+            Classes 1 to 10 | All Subjects Covered | Personal Attention Guaranteed
           </div>
           <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg text-primary max-w-3xl mx-auto lg:mx-0">
-            Confident students. Clear concepts. <span className="text-gradient">Better results.</span>
+            Lakshya Coaching Classes <span className="text-gradient">Building Strong Foundations for a Brighter Future</span>
           </h1>
           <p className="text-body-lg text-on-surface-variant max-w-xl mx-auto lg:mx-0">
-            Premium after-school coaching for Classes 1-10 with small batches, weekly testing, parent updates, and mentors who help children build disciplined study habits.
+            Where every child learns with confidence and clarity.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 pt-4 justify-center lg:justify-start">
             <Link to="/inquire">
@@ -31,16 +33,21 @@ const Hero = () => {
             </Link>
             <a href="#programs" className="w-full sm:w-auto">
               <button className="w-full px-8 py-4 bg-white border border-outline-variant/50 text-primary rounded-full font-bold text-lg hover:border-primary/40 hover:bg-primary/5 transition-all active:scale-95">
-                Explore Courses
+                View Programs
               </button>
             </a>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 md:gap-5 pt-6">
-            {[{ v: '1,000+', l: 'Students mentored' }, { v: '4.9/5', l: 'Parent rating' }, { v: '10+', l: 'Years of teaching' }].map((s) => (
-              <div key={s.l} className="rounded-xl bg-white/80 border border-outline-variant/30 p-4">
-                <div className="text-2xl md:text-headline-md font-bold text-primary">{s.v}</div>
-                <div className="text-[11px] md:text-xs text-secondary font-bold leading-snug">{s.l}</div>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 pt-6">
+            {[
+              ['location_on', 'Jaipur Location'],
+              ['groups', 'Experienced Faculty'],
+              ['menu_book', 'CBSE / RBSE Curriculum'],
+              ['psychology', 'Concept-Based Learning']
+            ].map(([icon, label]) => (
+              <div key={label} className="rounded-xl bg-white/80 border border-outline-variant/30 p-4 flex items-center gap-3">
+                <span className="material-symbols-outlined text-primary text-[22px]">{icon}</span>
+                <div className="text-[12px] md:text-sm text-secondary font-bold leading-snug">{label}</div>
               </div>
             ))}
           </div>
@@ -51,12 +58,12 @@ const Hero = () => {
           animate={{ opacity: 1, scale: 1 }}
           className="relative"
         >
-          <div className="absolute -inset-4 bg-secondary-container opacity-70 blur-3xl rounded-full"></div>
+          <div className="absolute -inset-4 bg-tertiary-fixed opacity-70 blur-3xl rounded-full"></div>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
             <img
-              alt="Students learning together in a coaching classroom"
+              alt="Lakshya Coaching Classes classroom"
               className="w-full object-cover aspect-[4/5] md:aspect-[5/4] lg:aspect-[4/5]"
-              src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?q=80&w=900&auto=format&fit=crop"
+              src={classroom}
             />
           </div>
           <motion.div
@@ -65,12 +72,12 @@ const Hero = () => {
             className="absolute -bottom-6 left-4 md:-left-6 glass-panel p-5 md:p-6 rounded-xl shadow-xl max-w-[230px] md:max-w-[260px]"
           >
             <div className="flex items-center gap-3 mb-3">
-              <div className="w-10 h-10 bg-tertiary-fixed rounded-lg flex items-center justify-center text-on-tertiary-fixed">
-                <span className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+              <div className="w-12 h-12 bg-white rounded-lg flex items-center justify-center overflow-hidden">
+                <img src={logo} alt="" className="w-full h-full object-contain" />
               </div>
               <div>
-                <div className="font-bold text-primary text-sm md:text-base">Weekly Test Cycle</div>
-                <div className="text-[10px] md:text-[12px] text-secondary font-semibold">Review, revise, improve</div>
+                <div className="font-bold text-primary text-sm md:text-base">Lakshya Jr. Classes</div>
+                <div className="text-[10px] md:text-[12px] text-secondary font-semibold">Classes I-X, all subjects</div>
               </div>
             </div>
             <div className="w-full bg-surface-container-highest h-1.5 rounded-full overflow-hidden">

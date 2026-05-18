@@ -1,31 +1,37 @@
 import { motion } from 'framer-motion';
+import vanPoster from './images/1.jpeg';
 
 const Admission = () => {
   const steps = [
     {
-      title: 'Inquiry',
-      desc: "Tell us your child's class, board, and current academic needs.",
-      icon: 'chat_bubble'
+      title: 'Van Facility Available',
+      desc: 'Convenient transport support for students and parents.',
+      icon: 'directions_bus'
     },
     {
-      title: 'Counseling',
-      desc: 'A mentor reviews strengths, gaps, school schedule, and exam goals.',
-      icon: 'psychology'
+      title: 'Small Batch Sizes',
+      desc: 'Focused classroom groups so every child receives attention.',
+      icon: 'groups'
     },
     {
-      title: 'Class Fit',
-      desc: 'Understand the teaching style, batch level, and subject plan before joining.',
-      icon: 'visibility'
+      title: 'Progress Reports for Parents',
+      desc: 'Clear updates on tests, improvement areas, and next steps.',
+      icon: 'bar_chart'
     },
     {
-      title: 'Batch Plan',
-      desc: 'Receive a clear timetable, test plan, and parent update cadence.',
-      icon: 'verified'
+      title: 'Weekly Doubt Sessions',
+      desc: 'Regular support to clear doubts before they become learning gaps.',
+      icon: 'help'
+    },
+    {
+      title: 'Homework & Test Support',
+      desc: 'Guided help with assignments, revision, and exam preparation.',
+      icon: 'fact_check'
     }
   ];
 
   return (
-    <section className="py-section-gap relative overflow-hidden" id="admission">
+    <section className="py-section-gap relative overflow-hidden" id="facilities">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -33,11 +39,15 @@ const Admission = () => {
           viewport={{ once: true }}
           className="text-center mb-16 max-w-3xl mx-auto"
         >
-          <h2 className="text-label-caps text-on-primary-container uppercase mb-4">Admissions</h2>
-          <h3 className="text-headline-md font-display-lg text-primary">A simple start, then a serious academic plan</h3>
+          <h2 className="text-label-caps text-on-primary-container uppercase mb-4">Facilities We Provide</h2>
+          <h3 className="text-headline-md font-display-lg text-primary">Practical support for students and parents</h3>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-[0.82fr_1.18fr] gap-8 items-stretch">
+          <div className="rounded-xl overflow-hidden card-shadow border border-outline-variant/30 bg-white">
+            <img src={vanPoster} alt="Lakshya Coaching Classes van facility" className="w-full h-full object-cover aspect-[4/5] lg:aspect-auto" />
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {steps.map((step, idx) => (
             <motion.div
               key={step.title}
@@ -55,6 +65,7 @@ const Admission = () => {
               <p className="text-on-surface-variant leading-relaxed">{step.desc}</p>
             </motion.div>
           ))}
+          </div>
         </div>
       </div>
     </section>

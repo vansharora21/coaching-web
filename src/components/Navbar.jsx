@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import logo from './images/3.jpeg';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Programs', path: '/#programs' },
     { name: 'About', path: '/#about' },
-    { name: 'Faculty', path: '/#faculty' },
-    { name: 'Results', path: '/#results' }
+    { name: 'Why Us', path: '/#why-us' },
+    { name: 'Programs', path: '/#programs' },
+    { name: 'Facilities', path: '/#facilities' },
+    { name: 'Contact', path: '/#contact' }
   ];
 
   return (
     <nav className="fixed top-0 w-full z-[100] glass-panel shadow-sm">
       <div className="flex justify-between items-center max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop h-20">
         <Link to="/" className="flex items-center gap-2 md:gap-3 shrink-0" onClick={() => setIsOpen(false)}>
-          <div className="w-9 h-9 md:w-10 md:h-10 bg-primary rounded-lg flex items-center justify-center shadow-md shadow-primary/20">
-            <span className="material-symbols-outlined text-white text-xl md:text-2xl" style={{ fontVariationSettings: "'FILL' 1" }}>school</span>
+          <div className="w-12 h-12 md:w-14 md:h-14 bg-white rounded-lg flex items-center justify-center shadow-md shadow-primary/10 overflow-hidden border border-outline-variant/30">
+            <img src={logo} alt="Lakshya Coaching Classes logo" className="w-full h-full object-contain" />
           </div>
-          <span className="text-xl md:text-headline-sm font-display-lg font-bold text-primary hidden xs:block">Academy Elite</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-2 bg-white/60 border border-outline-variant/30 rounded-full px-2 py-1">

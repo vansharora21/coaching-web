@@ -1,24 +1,27 @@
 import { motion } from 'framer-motion';
+import prashantSir from './images/5.jpeg';
+import lakshyaMark from './images/2.jpeg';
+import classroom from './images/4.jpeg';
 
 const Faculty = () => {
   const teachers = [
     {
-      name: 'Dr. Vikram Seth',
-      subject: 'Mathematics & Physics',
-      exp: '15+ Years',
-      img: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=500&auto=format&fit=crop'
+      name: 'Prashant Sir',
+      subject: 'Maths, Science & Social Science',
+      exp: 'Senior Mentor',
+      img: prashantSir
     },
     {
-      name: 'Sarah Johnson',
-      subject: 'English & Social Science',
-      exp: '10+ Years',
-      img: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=500&auto=format&fit=crop'
+      name: 'Lakshya Jr. Classes',
+      subject: 'Classes I-VIII, All Subjects',
+      exp: 'Foundation Batches',
+      img: lakshyaMark
     },
     {
-      name: 'Amitabh Raj',
-      subject: 'Science & Technology',
-      exp: '12+ Years',
-      img: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=500&auto=format&fit=crop'
+      name: 'Lakshya Senior Batches',
+      subject: 'Classes IX-X, Board Preparation',
+      exp: 'Regular Tests',
+      img: classroom
     }
   ];
 
@@ -32,7 +35,7 @@ const Faculty = () => {
           className="text-center mb-14 max-w-3xl mx-auto"
         >
           <h2 className="text-label-caps text-on-primary-container uppercase mb-4">Our Faculty</h2>
-          <h3 className="text-headline-md font-display-lg text-primary">Experienced teachers who know the school journey</h3>
+          <h3 className="text-headline-md font-display-lg text-primary">Guidance led by Prashant Sir for the school journey</h3>
         </motion.div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {teachers.map((teacher, idx) => (
@@ -50,7 +53,7 @@ const Faculty = () => {
               <div className="p-7">
                 <div className="text-label-caps text-secondary uppercase mb-2">{teacher.subject}</div>
                 <h4 className="text-headline-sm text-primary mb-1">{teacher.name}</h4>
-                <p className="text-on-surface-variant font-semibold">{teacher.exp} teaching experience</p>
+                <p className="text-on-surface-variant font-semibold">{teacher.exp}</p>
               </div>
             </motion.div>
           ))}

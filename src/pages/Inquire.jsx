@@ -2,10 +2,9 @@ import { motion } from 'framer-motion';
 
 const Inquire = () => {
   const details = [
-    ['location_on', '123 Academic Blvd, Education City'],
-    ['call', '+1 (555) 123-4567'],
-    ['mail', 'hello@academyelite.com'],
-    ['schedule', 'Mon-Sat, 9:00 AM - 8:00 PM']
+    ['location_on', '2/524, In front of Chitrakoot Stadium, Jaipur'],
+    ['call', '+91 9950803030'],
+    ['schedule', 'Monday - Saturday | 4 PM - 8 PM']
   ];
 
   return (
@@ -16,8 +15,8 @@ const Inquire = () => {
           animate={{ opacity: 1, y: 0 }}
           className="text-center mb-14 max-w-3xl mx-auto"
         >
-          <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg text-primary mb-4">Inquire about admissions</h1>
-          <p className="text-body-lg text-secondary">Share a few details and our counselor will help you choose the right batch, subject plan, and demo timing.</p>
+          <h1 className="text-display-lg-mobile md:text-display-lg font-display-lg text-primary mb-4">Inquire at Lakshya Coaching Classes</h1>
+          <p className="text-body-lg text-secondary">Share a few details and our team will help you choose the right class batch and subject support.</p>
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-14 items-start">
@@ -54,10 +53,10 @@ const Inquire = () => {
                 <div className="space-y-2">
                   <label className="text-label-caps text-secondary uppercase font-bold">Interested In</label>
                   <select className="w-full px-4 py-3 bg-surface-container-low border border-outline-variant/50 rounded-lg focus:outline-none focus:border-primary transition-colors">
-                    <option>Complete coaching</option>
-                    <option>Math and Science</option>
-                    <option>English and Social Science</option>
-                    <option>Board exam crash course</option>
+                  <option>All subjects</option>
+                  <option>Mathematics and Science</option>
+                  <option>English, Hindi and Social Science</option>
+                  <option>French</option>
                   </select>
                 </div>
               </div>
@@ -77,7 +76,7 @@ const Inquire = () => {
             className="space-y-6"
           >
             <div className="bg-primary p-8 rounded-xl text-on-primary shadow-xl">
-              <h4 className="text-headline-sm mb-6">Talk to an academic counselor</h4>
+              <h4 className="text-headline-sm mb-6">Contact Lakshya Coaching Classes</h4>
               <div className="space-y-5">
                 {details.map(([icon, text]) => (
                   <div key={text} className="flex items-start gap-4">
@@ -92,12 +91,12 @@ const Inquire = () => {
               <ul className="space-y-4 text-on-surface-variant">
                 <li className="flex gap-3"><span className="material-symbols-outlined text-primary">check_circle</span><span>We call to understand the student profile.</span></li>
                 <li className="flex gap-3"><span className="material-symbols-outlined text-primary">check_circle</span><span>You receive batch and subject options.</span></li>
-                <li className="flex gap-3"><span className="material-symbols-outlined text-primary">check_circle</span><span>A mentor recommends the right batch and plan.</span></li>
+                <li className="flex gap-3"><span className="material-symbols-outlined text-primary">check_circle</span><span>Our team guides you with the next inquiry steps.</span></li>
               </ul>
             </div>
             <div className="rounded-xl overflow-hidden card-shadow h-[280px] border border-outline-variant/30">
               <iframe
-                title="Academy Elite location map"
+                title="Lakshya Coaching Classes location map"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.1234!2d77.1234!3d28.1234!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjjCsDA3JzI0LjIiTiA3N8KwMDcnMjQuMiJF!5e0!3m2!1sen!2sin!4v1234567890"
                 className="w-full h-full border-0 grayscale contrast-125 opacity-80"
                 allowFullScreen=""
