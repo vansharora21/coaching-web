@@ -1,46 +1,75 @@
-import React from 'react';
-
 const Testimonials = () => {
   const reviews = [
     {
-      name: "Mrs. Sharma",
-      role: "Parent of Class 10 Student",
-      text: "The personalized attention my daughter received for her Class 10 boards was exceptional. The weekly tests helped her identify and fix her weak areas.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBjL4kkX1z85LZqBKXIdwZ9PpFuYTKK4cifGkOpIiqscAxK7rn5m7Yi_QrDtpIX1Qxnjs8hCpndjLlVW7hAQwYbLi9MvNABt7O7MARRoH5t2fdy2lXHVZVfPmzj3AdrFBDBQmVVtg3oOgfQisd3uIR2syJGB-23EFiL6DaBAa6jLaivNbx8RZCeumI84rrXKR-Cl_VVcejkUcMLO1UGaKhbdnTq6WgNEkde-AcfgBqANgo4HnI3j9aU86T9mqrcg2dP_XH0NfFWFnO2"
+      name: 'Mrs. Sharma',
+      role: 'Parent of Class 10 Student',
+      text: 'The weekly tests and correction classes changed the way my daughter prepared. We always knew what needed work next.',
+      img: 'https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=240&auto=format&fit=crop'
     },
     {
-      name: "Aryan Mehta",
-      role: "Class 8 Student",
-      text: "I love the science experiments we do in class. Academy Elite made subjects like Physics and Math actually fun for me.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuBGjjp4j2dR_eBtUn5As71a-cY68649C6Y73MspMRAT_bakpe-mZ1AB_0Q8s4XbZEgCtoNMGrq6w-dG4S1LZbSH8fikAIsTO8tcrdjnBMJIfro2gW0qZuCqEO0aPnRYtJcz2v1m9GcznaIQUtLq_h3eVvAH2JhN7gIF1-yvKAUBx0OaUtq9xdLAtRLdYFiQoZ76RAnokgdt46gssd5odWmAk9FQQJMyQeGHdKz9i0rggANjq0EZjqdO5cYKcdctEf8EtR_XNWmxah30"
+      name: 'Aryan Mehta',
+      role: 'Class 8 Student',
+      text: 'Math feels easier now because every topic is explained from the basics and then practiced in class.',
+      img: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=240&auto=format&fit=crop'
     },
     {
-      name: "Mr. Rajesh",
-      role: "Parent of Class 5 Student",
-      text: "The mentors are approachable and the small batch size ensures no student is left behind. Best coaching institute in the city.",
-      img: "https://lh3.googleusercontent.com/aida-public/AB6AXuCGcUKb4IJI2LRklVvQTHvxD30GE52VONEIawQT_8K0SousnckOS-IJLmZ4jwGCPfN13ZC_3PWagAYYNbXV-PiJd2bzPEHoLt_uRjh9feyx7G4pR1sY3FEFNSXxNYz0iY8ZJLc9I7wRsAobTgdOH1rA8GJGgm1OeYuyn55lBFNfKliDhWwMz0znG20cksWcFK407bZ4OJKa3S-oAu0pNWmd3JCfNCTLBRKXWg4jRGSQoUx5MvQozU-OPFvljBtyp3wcI5f1R0PtcTDk"
+      name: 'Mr. Rajesh',
+      role: 'Parent of Class 5 Student',
+      text: 'The batch size is small and the teachers are approachable. The parent updates are practical, not just formal.',
+      img: 'https://images.unsplash.com/photo-1566492031773-4f4e44671857?q=80&w=240&auto=format&fit=crop'
+    },
+    {
+      name: 'Nisha Kapoor',
+      role: 'Parent of Class 7 Student',
+      text: 'The teachers identified exactly where my son was losing marks and gave him a clear weekly practice plan.',
+      img: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=240&auto=format&fit=crop'
+    },
+    {
+      name: 'Kabir S.',
+      role: 'Class 9 Student',
+      text: 'The revision sheets before tests are very useful. I feel more organized and less nervous before exams.',
+      img: 'https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=240&auto=format&fit=crop'
     }
   ];
 
+  const rollingReviews = [...reviews, ...reviews];
+
   return (
-    <section className="py-section-gap bg-surface-container-lowest">
+    <section className="py-section-gap bg-surface-container-lowest overflow-hidden">
       <div className="max-w-container-max mx-auto px-margin-mobile md:px-margin-desktop">
-        <div className="text-center mb-16">
-          <h2 className="text-label-caps text-on-primary-container uppercase mb-4">Testimonials</h2>
-          <h3 className="text-headline-md font-display-lg text-primary">What Parents & Students Say</h3>
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-12">
+          <div className="max-w-2xl">
+            <h2 className="text-label-caps text-on-primary-container uppercase mb-4">Testimonials</h2>
+            <h3 className="text-headline-md font-display-lg text-primary">What families notice after joining</h3>
+          </div>
+          <div className="flex items-center gap-2 text-tertiary-fixed-dim">
+            {[...Array(5)].map((_, i) => (
+              <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+            ))}
+            <span className="ml-2 text-primary font-bold">4.9 parent rating</span>
+          </div>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {reviews.map((review, idx) => (
-            <div key={idx} className="bg-white p-10 rounded-3xl card-shadow relative">
-              <span className="material-symbols-outlined absolute top-6 right-8 text-6xl text-primary/5">format_quote</span>
-              <div className="flex gap-1 text-tertiary-fixed-dim mb-6">
+      </div>
+
+      <div className="relative">
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-20 md:w-40 bg-gradient-to-r from-surface-container-lowest to-transparent z-10"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-20 md:w-40 bg-gradient-to-l from-surface-container-lowest to-transparent z-10"></div>
+
+        <div className="testimonial-track flex gap-6 w-max">
+          {rollingReviews.map((review, idx) => (
+            <article
+              key={`${review.name}-${idx}`}
+              className="w-[320px] md:w-[420px] bg-white p-7 rounded-xl card-shadow border border-outline-variant/30 relative"
+            >
+              <span className="material-symbols-outlined absolute top-5 right-6 text-5xl text-primary/5">format_quote</span>
+              <div className="flex gap-1 text-tertiary-fixed-dim mb-5">
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} className="material-symbols-outlined" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
+                  <span key={i} className="material-symbols-outlined text-[20px]" style={{ fontVariationSettings: "'FILL' 1" }}>star</span>
                 ))}
               </div>
-              <p className="text-on-surface-variant italic mb-8">"{review.text}"</p>
+              <p className="text-on-surface-variant italic mb-7 min-h-[108px]">"{review.text}"</p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden">
+                <div className="w-12 h-12 rounded-xl overflow-hidden">
                   <img alt={review.name} className="w-full h-full object-cover" src={review.img} />
                 </div>
                 <div>
@@ -48,7 +77,7 @@ const Testimonials = () => {
                   <div className="text-secondary text-sm">{review.role}</div>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>

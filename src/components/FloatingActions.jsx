@@ -1,14 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const FloatingActions = () => {
   const [showScrollTop, setShowScrollTop] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setShowScrollTop(window.scrollY > 400);
-    };
+    const handleScroll = () => setShowScrollTop(window.scrollY > 400);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -18,80 +15,56 @@ const FloatingActions = () => {
   };
 
   const actions = [
-    { 
-      id: 'whatsapp', 
-      icon: 'https://cdn-icons-png.flaticon.com/512/3670/3670051.png', 
-      color: 'bg-[#25D366]', 
-      link: 'https://wa.me/15551234567',
-      label: 'WhatsApp'
-    },
-    { 
-      id: 'call', 
-      icon: 'call', 
-      isIcon: true,
-      color: 'bg-primary', 
+    {
+      id: 'call',
+      icon: 'call',
       link: 'tel:+15551234567',
       label: 'Call'
+    },
+    {
+      id: 'whatsapp',
+      icon: 'forum',
+      link: 'https://wa.me/15551234567',
+      label: 'WhatsApp',
+      external: true
     }
   ];
 
   return (
-    <div className="fixed bottom-6 right-6 md:bottom-10 md:right-10 flex flex-col gap-4 z-[100] items-end">
-      {/* Scroll to Top Button */}
+    <div className="fixed bottom-5 right-5 md:bottom-8 md:right-8 z-[100] flex flex-col items-end gap-3">
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
-            initial={{ opacity: 0, scale: 0.5, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.5, y: 20 }}
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 12 }}
             onClick={scrollToTop}
-            className="w-12 h-12 bg-white text-primary rounded-full shadow-xl flex items-center justify-center hover:bg-primary hover:text-white transition-all border border-outline-variant/30"
+            className="w-11 h-11 rounded-full bg-white text-primary border border-outline-variant/40 shadow-lg flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            aria-label="Scroll to top"
           >
-            <span className="material-symbols-outlined">arrow_upward</span>
+            <span className="material-symbols-outlined text-[22px]">arrow_upward</span>
           </motion.button>
         )}
       </AnimatePresence>
 
-      {/* Expandable Contact FAB */}
-      <div className="relative">
-        <AnimatePresence>
-          {isOpen && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 20 }}
-              className="flex flex-col gap-3 mb-3 items-end"
-            >
-              {actions.map((action) => (
-                <motion.a
-                  key={action.id}
-                  href={action.link}
-                  target={action.id === 'whatsapp' ? '_blank' : undefined}
-                  rel={action.id === 'whatsapp' ? 'noopener noreferrer' : undefined}
-                  whileHover={{ scale: 1.05 }}
-                  className={`${action.color} text-white px-4 py-2 rounded-2xl shadow-lg flex items-center gap-3 group`}
-                >
-                  <span className="text-sm font-bold opacity-0 group-hover:opacity-100 transition-opacity absolute right-full mr-4 bg-white text-gray-800 px-3 py-1 rounded-lg shadow-md pointer-events-none">
-                    {action.label}
-                  </span>
-                  {action.isIcon ? (
-                    <span className="material-symbols-outlined text-2xl">{action.icon}</span>
-                  ) : (
-                    <img src={action.icon} alt={action.label} className="w-6 h-6" />
-                  )}
-                  <span className="font-bold hidden md:block">{action.label}</span>
-                </motion.a>
-              ))}
-            </motion.div>
-          )}
-        </AnimatePresence>
-
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className={`w-14 h-14 md:w-16 md:h-16 rounded-full shadow-2xl flex items-center justify-center transition-all active:scale-95 z-50 ${isOpen ? 'bg-inverse-surface text-inverse-on-surface rotate-45' : 'bg-primary text-on-primary'}`}
-        >
-          <span className="material-symbols-outlined text-3xl">{isOpen ? 'close' : 'add_call'}</span>
-        </button>
+      <div className="glass-panel rounded-full shadow-xl shadow-primary/10 p-1.5 flex items-center gap-1.5">
+        {actions.map((action) => (
+          <motion.a
+            key={action.id}
+            href={action.link}
+            target={action.external ? '_blank' : undefined}
+            rel={action.external ? 'noopener noreferrer' : undefined}
+            whileHover={{ y: -2 }}
+            whileTap={{ scale: 0.96 }}
+            className="group relative w-11 h-11 md:w-12 md:h-12 rounded-full bg-white text-primary border border-outline-variant/30 flex items-center justify-center hover:bg-primary hover:text-white transition-colors"
+            aria-label={action.label}
+          >
+            <span className="material-symbols-outlined text-[22px]">{action.icon}</span>
+            <span className="pointer-events-none absolute right-0 bottom-full mb-3 rounded-lg bg-primary px-3 py-1.5 text-xs font-bold text-white opacity-0 translate-y-1 group-hover:opacity-100 group-hover:translate-y-0 transition-all whitespace-nowrap">
+              {action.label}
+            </span>
+          </motion.a>
+        ))}
       </div>
     </div>
   );
